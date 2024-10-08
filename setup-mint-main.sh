@@ -194,8 +194,17 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install -y brave-browser
+sudo apt install -y gh
 sudo apt install -y hardinfo
 sudo apt install -y hwinfo
+# phoronix test suite
+git clone https://github.com/phoronix-test-suite/phoronix-test-suite.git
+cd phoronix-test-suite/
+sudo ./install-sh
+cd ..
+sudo rm -R phoronix-test-suite/
+sudo apt install -y php
+sudo apt install -y php-xml
 sudo apt install -y vim
 
 # end of my custom additions
