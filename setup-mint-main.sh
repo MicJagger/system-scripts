@@ -189,6 +189,7 @@ sudo rm -f itch-setup # We want to wait a bit to remove the file.
 
 # my custom additions 
 sudo apt install -y audacity
+sudo apt install -y bb
 # brave
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -205,6 +206,7 @@ cd ..
 sudo rm -R phoronix-test-suite/
 sudo apt install -y php
 sudo apt install -y php-xml
+sudo apt install -y toilet
 sudo apt install -y vim
 
 # end of my custom additions
