@@ -178,7 +178,7 @@ sudo apt install -y gparted
 sudo apt install -y menulibre
 sudo apt install -y pavucontrol
 sudo apt install -y psensor
-sudo apt install -y pcmanfm
+# sudo apt install -y pcmanfm
 sudo apt install -y qbittorrent
 
 # Big things that should be installed last.
