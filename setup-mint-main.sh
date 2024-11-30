@@ -200,6 +200,7 @@ sudo apt install -y gh
 sudo apt install -y hardinfo
 sudo apt install -y hexedit
 sudo apt install -y hwinfo
+sudo apt install -y okteta
 # phoronix test suite
 git clone https://github.com/phoronix-test-suite/phoronix-test-suite.git
 cd phoronix-test-suite/
@@ -210,6 +211,14 @@ sudo apt install -y php
 sudo apt install -y php-xml
 sudo apt install -y toilet
 sudo apt install -y vim
+
+# some folder changes
+
+rm ~/Documents/ -r
+rm ~/Music/ -r
+rm ~/Pictures/ -r
+rm ~/Templates/ -r
+rm ~/Videos/ -r
 
 # end of my custom additions
 
