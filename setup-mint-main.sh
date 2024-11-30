@@ -217,6 +217,7 @@ sudo apt install -y vim
 rm ~/Documents/ -r
 rm ~/Music/ -r
 rm ~/Pictures/ -r
+rm ~/Public/ -r
 rm ~/Templates/ -r
 rm ~/Videos/ -r
 
