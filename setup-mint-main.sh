@@ -220,6 +220,13 @@ rm ~/Pictures/ -r
 rm ~/Templates/ -r
 rm ~/Videos/ -r
 
+mkdir ~/files
+cd ~/files
+mkdir code
+mkdir code/repos
+mkdir docs
+mkdir random
+
 # end of my custom additions
 
 
