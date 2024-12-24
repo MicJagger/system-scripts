@@ -143,8 +143,8 @@ sudo rm -f code.deb
 # sudo rm -f google-chrome-stable_current_amd64.deb
 
 # Misc useful terminal stuff.
-sudo apt install -y cmatrix
-sudo apt install -y cowsay
+# sudo apt install -y cmatrix
+# sudo apt install -y cowsay
 sudo apt install -y dcfldd
 sudo apt install -y ffmpeg
 sudo apt install -y fortune-mod
@@ -166,9 +166,16 @@ if [ -f "/usr/bin/gnome-shell" ]; then
 fi
 
 # Install useful GUI programs via Flatpak.
-for f in com.discordapp.Discord org.gimp.GIMP org.kde.kdenlive com.obsproject.Studio com.slack.Slack; do
-    flatpak install flathub --noninteractive -y $f
-done
+# for f in com.discordapp.Discord org.gimp.GIMP org.kde.kdenlive com.obsproject.Studio com.slack.Slack; do
+#     flatpak install flathub --noninteractive -y $f
+# done
+   
+# separated
+flatpak install flathub --noninteractive -y com.discordapp.Discord
+flatpak install flathub --noninteractive -y org.gimp.GIMP
+flatpak install flathub --noninteractive -y org.kde.kdenlive
+flatpak install flathub --noninteractive -y com.obsproject.Studio
+# flatpak install flathub --noninteractive -y com.slack.Slack
 
 # Install useful GUI programs via apt.
 sudo apt install -y baobab
@@ -182,14 +189,13 @@ sudo apt install -y psensor
 sudo apt install -y qbittorrent
 
 # Big things that should be installed last.
-sudo apt install -y steam
+# sudo apt install -y steam
 sudo apt install -y wine
 sudo rm -f itch-setup # We want to wait a bit to remove the file.
 
 
 # my custom additions 
 sudo apt install -y audacity
-sudo apt install -y bb
 # brave
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -198,35 +204,9 @@ sudo apt install -y brave-browser
 sudo apt install -y gdb
 sudo apt install -y gh
 sudo apt install -y hardinfo
-sudo apt install -y hexedit
-sudo apt install -y hwinfo
 sudo apt install -y okteta
-# phoronix test suite
-git clone https://github.com/phoronix-test-suite/phoronix-test-suite.git
-cd phoronix-test-suite/
-sudo ./install-sh
-cd ..
-sudo rm -R phoronix-test-suite/
 sudo apt install -y php
 sudo apt install -y php-xml
-sudo apt install -y toilet
-sudo apt install -y vim
-
-# some folder changes
-
-rm ~/Documents/ -r
-rm ~/Music/ -r
-rm ~/Pictures/ -r
-rm ~/Public/ -r
-rm ~/Templates/ -r
-rm ~/Videos/ -r
-
-mkdir ~/files
-cd ~/files
-mkdir code
-mkdir code/repos
-mkdir docs
-mkdir random
 
 # end of my custom additions
 
