@@ -1,9 +1,8 @@
 # system-scripts
 A repo of scripts for various purposes \
-The scripts are organized into folders, and then usually named according to function \
+The scripts are organized into folders, and then usually named according to function
 
-##kvm-qemu-port-forwarding
-###qemu
+## kvm-qemu-port-forwarding
 Allows you to port forward multiple tcp/udp ports to virtual machines over NAT
 
 ## linux-mint
