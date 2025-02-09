@@ -1,9 +1,11 @@
 # system-scripts
 A repo of scripts for various purposes \
-Names are in specific order, for example \
-mint = system \
-setup = type of operation (setup, remove, etc) \
-folders = type of object operating on
+The scripts are organized into folders, and then usually named according to function \
 
-## setup-mint-main
+##kvm-qemu-port-forwarding
+###qemu
+Allows you to port forward multiple tcp/udp ports to virtual machines over NAT
+
+## linux-mint
+### setup-mint-installs
 A lot of programs, utilities, and dependencies I like for a ready-to-go Linux Mint setup
