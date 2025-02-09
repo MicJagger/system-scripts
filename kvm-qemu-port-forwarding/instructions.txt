@@ -1,0 +1,19 @@
+https://wiki.libvirt.org/Networking.html#Forwarding_Incoming_Connections
+This script is based on the method shown in the wiki, but reworked to support multiple ports as well as TCP & UDP simultaneously
+
+This script is to port forward a kvm/qemu virtual machine over NAT
+The qemu file in this folder is to be modified to have the virtual machine name, its IP, and all ports
+It will port forward those ports over both TCP and UDP
+
+# go to the location for the script
+cd /etc/libvirt/hooks/
+
+# insert script - - - you could copy it into here instead
+sudo nano qemu
+
+# make the file executable
+sudo chmod +x qemu
+
+# restart kvm/qemu
+sudo systemctl stop libvirtd
+sudo systemctl start libvirtd

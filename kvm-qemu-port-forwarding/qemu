@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Change name to be vm name
+if [ "${1}" = "VIRTUAL_MACHINE_NAME" ]; then
+
+   # Update guest local IP and the ports you would like opened here (tcp & udp)
+   GUEST_IP=192.168.000.000
+   PORTS=( '00000' '00001' )
+
+   if [ "${2}" = "stopped" ] || [ "${2}" = "reconnect" ]; then
+      for PORT in ${PORTS[@]}
+      do 
+         /sbin/iptables -D FORWARD -o virbr0 -p tcp -d $GUEST_IP --dport $PORT -j ACCEPT
+         /sbin/iptables -D FORWARD -o virbr0 -p udp -d $GUEST_IP --dport $PORT -j ACCEPT
+
+         /sbin/iptables -t nat -D PREROUTING -p tcp --dport $PORT -j DNAT --to $GUEST_IP:$PORT
+         /sbin/iptables -t nat -D PREROUTING -p udp --dport $PORT -j DNAT --to $GUEST_IP:$PORT
+      done
+   fi
+
+   if [ "${2}" = "start" ] || [ "${2}" = "reconnect" ]; then
+      for PORT in ${PORTS[@]} 
+      do
+         /sbin/iptables -I FORWARD -o virbr0 -p tcp -d $GUEST_IP --dport $PORT -j ACCEPT
+         /sbin/iptables -I FORWARD -o virbr0 -p udp -d $GUEST_IP --dport $PORT -j ACCEPT
+
+         /sbin/iptables -t nat -I PREROUTING -p tcp --dport $PORT -j DNAT --to $GUEST_IP:$PORT
+         /sbin/iptables -t nat -I PREROUTING -p udp --dport $PORT -j DNAT --to $GUEST_IP:$PORT
+      done
+   fi
+
+fi
